@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Saidur Rohoman Saimoon - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #334155;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .edu-item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .edu-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-card {
+            background: #334155;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-card i {
+            color: var(--accent-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            color: var(--text-secondary);
+        }
+
+        .info-item strong {
+            color: var(--text-primary);
+        }
+
+        .hobby-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hobby-badge {
+            background: #334155;
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            section, header { padding: 20px; }
+            .contact-info { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Profile Section -->
+        <header>
+            <img src="51941.png" alt="Md. Saidur Rohoman Saimoon" class="profile-img">
+            <h1>Md. Saidur Rohoman Saimoon</h1>
+            <p class="subtitle">Undergraduate Student | Soil Science</p>
+            
+            <div class="contact-info">
+                <span><i class="fas fa-location-dot"></i> Charfesson, Bhola, Barishal</span>
+                <span><i class="fas fa-phone"></i> <a href="tel:01610426493">01610426493</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:srsaimoon@proton.me">srsaimoon@proton.me</a></span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/Saidur.R.Saimoon" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/qr/3ZWP6IYVEFZGP1" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/s.r.saimoon?stkn=a254NWVkcHc0ZHYx" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </header>
+
+        <!-- Career Objective -->
+        <section>
+            <h2><i class="fas fa-bullseye"></i> Career Objective</h2>
+            <p style="color: var(--text-secondary);">
+                A motivated and responsible undergraduate student seeking opportunities to develop professional experience while applying my communication, computer, and problem-solving skills. Eager to learn, work collaboratively, and contribute positively to an organization.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2><i class="fas fa-graduation-cap"></i> Educational Qualifications</h2>
+            
+            <div class="edu-item">
+                <div class="edu-title">Honours (1st Year) - Soil Science</div>
+                <div class="edu-details">Barishal Government College | Session: 2025-2026 (Studying)</div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-title">HSC (Science)</div>
+                <div class="edu-details">Charfesson Government College | Year: 2025 | GPA: 3.08</div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-title">SSC (Science)</div>
+                <div class="edu-details">Char Aicha Secondary School | Year: 2023 | GPA: 4.56</div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section>
+            <h2><i class="fas fa-heart"></i> Hobbies & Interests</h2>
+            <div class="hobby-list">
+                <span class="hobby-badge"><i class="fas fa-swimmer"></i> Swimming</span>
+                <span class="hobby-badge"><i class="fas fa-car"></i> Long Driving</span>
+                <span class="hobby-badge"><i class="fas fa-gamepad"></i> Video Games</span>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2><i class="fas fa-code"></i> Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fas fa-laptop-code"></i> Basic Programming</div>
+                <div class="skill-card"><i class="fas fa-desktop"></i> Digital Literacy</div>
+                <div class="skill-card"><i class="fas fa-keyboard"></i> Typing (~30 WPM En/Bn)</div>
+                <div class="skill-card"><i class="fas fa-file-word"></i> MS Office Suite</div>
+                <div class="skill-card"><i class="fas fa-search"></i> Internet Research</div>
+                <div class="skill-card"><i class="fas fa-comments"></i> Communication Skills</div>
+                <div class="skill-card"><i class="fas fa-users"></i> Teamwork & Collaboration</div>
+                <div class="skill-card"><i class="fas fa-clock"></i> Time Management</div>
+            </div>
+        </section>
+
+        <!-- Personal Information -->
+        <section>
+            <h2><i class="fas fa-user"></i> Personal Information</h2>
+            <div class="info-grid">
+                <div class="info-item"><strong>Date of Birth:</strong> 25 January 2008</div>
+                <div class="info-item"><strong>Relationship Status:</strong> Single</div>
+                <div class="info-item"><strong>Father's Name:</strong> Sala Uddin</div>
+                <div class="info-item"><strong>Mother's Name:</strong> Kanif Fatema (Housewife)</div>
+                <div class="info-item"><strong>Languages:</strong> Bangla (Native), English</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Md. Saidur Rohoman Saimoon. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+  </html>
 
