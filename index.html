@@ -4,75 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md. Saidur Rohoman Saimoon - Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
+            --bg-color: #0b132b;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
             --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0b132b 75%);
             color: var(--text-primary);
             line-height: 1.6;
-            padding: 20px;
+            padding: 30px 15px;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px 0 rgba(56, 189, 248, 0.15);
+        }
+
+        /* Header / Profile Section */
         header {
             text-align: center;
             padding: 40px 20px;
-            background: var(--card-bg);
-            border-radius: 16px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent-color);
-            margin-bottom: 15px;
+            border: 3px solid transparent;
+            background: var(--accent-gradient) border-box;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
         }
 
         h1 {
-            font-size: 2rem;
-            color: var(--text-primary);
-            margin-bottom: 5px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
         }
 
         .subtitle {
-            color: var(--accent-color);
-            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
             font-weight: 500;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
             color: var(--text-secondary);
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .contact-info a {
@@ -95,121 +130,168 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 42px;
-            height: 42px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            background: #334155;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
             color: var(--text-primary);
             text-decoration: none;
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .social-btn:hover {
-            background: var(--accent-color);
+            background: var(--accent-gradient);
             color: #fff;
-            transform: translateY(-3px);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
         }
 
-        section {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
+        /* Section Headings */
         h2 {
-            font-size: 1.4rem;
-            color: var(--accent-color);
-            border-bottom: 2px solid #334155;
-            padding-bottom: 8px;
+            font-size: 1.35rem;
+            color: var(--text-primary);
             margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
+        h2 i {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Education */
         .edu-item {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 3px solid var(--accent-color);
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 22px;
+            border-left: 2px solid rgba(56, 189, 248, 0.3);
         }
 
         .edu-item:last-child {
             margin-bottom: 0;
         }
 
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
         .edu-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
         }
 
         .edu-details {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            margin-top: 3px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-        }
-
-        .skill-card {
-            background: #334155;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skill-card i {
-            color: var(--accent-color);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            color: var(--text-secondary);
-        }
-
-        .info-item strong {
-            color: var(--text-primary);
-        }
-
+        /* Hobbies Badges */
         .hobby-list {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .hobby-badge {
-            background: #334155;
-            color: var(--accent-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.92rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .hobby-badge:hover {
+            border-color: var(--accent-color);
+            background: rgba(56, 189, 248, 0.08);
+        }
+
+        .hobby-badge i {
+            color: var(--accent-color);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .skill-card i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        /* Personal Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            color: var(--text-secondary);
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .info-item strong {
+            color: var(--text-primary);
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
         }
 
         footer {
             text-align: center;
             padding: 20px;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         @media (max-width: 600px) {
-            body { padding: 10px; }
-            section, header { padding: 20px; }
-            .contact-info { flex-direction: column; gap: 8px; }
+            body { padding: 15px 10px; }
+            .glass-card { padding: 22px; }
+            .contact-info { flex-direction: column; gap: 10px; align-items: center; }
         }
     </style>
 </head>
@@ -217,8 +299,10 @@
 
     <div class="container">
         <!-- Header / Profile Section -->
-        <header>
-            <img src="51941.png" alt="Md. Saidur Rohoman Saimoon" class="profile-img">
+        <header class="glass-card">
+            <div class="profile-img-container">
+                <img src="51941.png" alt="Md. Saidur Rohoman Saimoon" class="profile-img">
+            </div>
             <h1>Md. Saidur Rohoman Saimoon</h1>
             <p class="subtitle">Undergraduate Student | Soil Science</p>
             
@@ -237,15 +321,15 @@
         </header>
 
         <!-- Career Objective -->
-        <section>
+        <section class="glass-card">
             <h2><i class="fas fa-bullseye"></i> Career Objective</h2>
-            <p style="color: var(--text-secondary);">
+            <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.7;">
                 A motivated and responsible undergraduate student seeking opportunities to develop professional experience while applying my communication, computer, and problem-solving skills. Eager to learn, work collaboratively, and contribute positively to an organization.
             </p>
         </section>
 
         <!-- Education -->
-        <section>
+        <section class="glass-card">
             <h2><i class="fas fa-graduation-cap"></i> Educational Qualifications</h2>
             
             <div class="edu-item">
@@ -265,7 +349,7 @@
         </section>
 
         <!-- Hobbies Section -->
-        <section>
+        <section class="glass-card">
             <h2><i class="fas fa-heart"></i> Hobbies & Interests</h2>
             <div class="hobby-list">
                 <span class="hobby-badge"><i class="fas fa-swimmer"></i> Swimming</span>
@@ -275,7 +359,7 @@
         </section>
 
         <!-- Skills -->
-        <section>
+        <section class="glass-card">
             <h2><i class="fas fa-code"></i> Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card"><i class="fas fa-laptop-code"></i> Basic Programming</div>
@@ -290,14 +374,14 @@
         </section>
 
         <!-- Personal Information -->
-        <section>
+        <section class="glass-card">
             <h2><i class="fas fa-user"></i> Personal Information</h2>
             <div class="info-grid">
-                <div class="info-item"><strong>Date of Birth:</strong> 25 January 2008</div>
-                <div class="info-item"><strong>Relationship Status:</strong> Single</div>
-                <div class="info-item"><strong>Father's Name:</strong> Sala Uddin</div>
-                <div class="info-item"><strong>Mother's Name:</strong> Kanif Fatema (Housewife)</div>
-                <div class="info-item"><strong>Languages:</strong> Bangla (Native), English</div>
+                <div class="info-item"><strong>Date of Birth</strong> 25 January 2008</div>
+                <div class="info-item"><strong>Relationship Status</strong> Single</div>
+                <div class="info-item"><strong>Father's Name</strong> Sala Uddin</div>
+                <div class="info-item"><strong>Mother's Name</strong> Kanif Fatema (Housewife)</div>
+                <div class="info-item"><strong>Languages</strong> Bangla (Native), English</div>
             </div>
         </section>
 
@@ -307,5 +391,5 @@
     </div>
 
 </body>
-  </html>
+</html>
 
